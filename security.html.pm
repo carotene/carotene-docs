@@ -141,7 +141,7 @@ On the contrary, if the user has no access to the channel, your application must
 {"authorized": false}
 }
 
-◊section{Resctrict API access}
+◊section{Restrict API access}
 
 It is wise to restrict the access to your API so it cannot be accessed from the outside. You can do this with a firewall, but, if you only require to restrict access to a particular IP, then you can simply use this configuration:
 

@@ -1,4 +1,11 @@
 #lang pollen
- 
-security.html
 
+overview.html
+installation.html
+javascript_api.html
+security.html
+presence.html
+api_rest.html
+scaling.html
+brokers.html
+configuration_options.html
