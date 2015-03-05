@@ -148,7 +148,7 @@ It is wise to restrict the access to your API so it cannot be accessed from the 
 ◊highlight['erlang]{
 [{carotene, [
     % ... Other configuration options
-    {restrict_api_access_to, {127, 0, 0, 1}
+    {restrict_api_access_to, {127, 0, 0, 1}}
     ]},
 }]}
 

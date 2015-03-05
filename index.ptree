@@ -5,7 +5,8 @@ installation.html
 javascript_api.html
 security.html
 presence.html
-api_rest.html
+backend_interoperate.html
+ssl.html
 scaling.html
 brokers.html
 configuration_options.html
