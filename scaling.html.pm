@@ -5,7 +5,7 @@
 
 ◊chapter{Scaling Carotene}
 
-You can have as many Carotene nodes as you need, joining them in a cluster. Nodes in a cluster will republish the messages they receive to the rest of clusters. Also, when they receive a request for the presence in a channel, they will communicate with the other nodes to fullfill the petition.
+You can have as many Carotene nodes as you need, joining them in a cluster. Nodes in a cluster will republish the messages they receive to the rest of clusters. Also, when they receive a request for the ◊link["presence.html"]{presence} in a channel, they will communicate with the other nodes to fullfill the petition.
 
 Note that Carotene is designed for real time applications, where usually messages lose value quickly with time. If there is a partition --some nodes of the cluster get disconnected from the rest of the cluster-- messages received in a subcluster will not be sent to the other nodes and thus will be lost. In many real time applications this is acceptable, because it makes no sense to store the messages to be sent later, when the cluster is rejoined. Take this into consideration if you want to ensure that absolutely all the messages will be received by all the nodes when they recover from the partition.
 
@@ -23,7 +23,10 @@ On Unix systems, you can find your Erlang cookie in ◊code{$HOME/.erlang.cookie
 
 ◊h3{Node configuration}
 
-Every carotene node must have a different node name. You can set the environment variable ◊code{CAROTENE_NODENAME} for this purpose. By default, it is set to ◊code{carotene@$HOSTNAME}. Note that the host name must be known to the other nodes. If you are running your server from Erlang runtime system ◊code{erl} you can also provide the name with the ◊code{-sname} option.
+Every carotene node must have a different node name. You can set the environment variable in the file ◊code{_rel/carotene/releases/VERSION/vm.args} of your Carotene installation (VERSION is the version you are running). You can change the node name changing the option:
+◊code{-sname carotene@localhost} to a nodename in a hostname that the other nodes jnow.
+
+Note that for development you can have several nodes in the same machine named for instance ◊code{carotene1@localhost}, ◊code{betacarotene@localhost}...
 
 To define the nodes your node will try to join on start up, use the following configuration option:
 
@@ -33,9 +36,3 @@ To define the nodes your node will try to join on start up, use the following co
     {nodes_in_cluster, [carotene@carotene1, carotene@carotene2]},
     ]},
 }]}
-
-To check the health of your cluster you can run the command ◊code{./scripts/carotene_control.sh cluster_status -n carotene@carotene1}. With this call you can check the cluster status from the point of view of the node ◊code{carotene@carotene1}. It will return a list of the nodes, like:
-
-◊pre{
-[carotene@carotene1, carotene@carotene2]
-}

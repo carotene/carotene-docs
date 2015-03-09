@@ -7,7 +7,7 @@
 
 Presence is the ability of knowing who is subscribed to a channel in a given moment.
 
-You can activate presence with the following configuration option:
+You can activate presence with the following ◊link["configuration_options.html"]{configuration} option in sys.config:
 
 ◊highlight['erlang]{
 [{carotene, [
