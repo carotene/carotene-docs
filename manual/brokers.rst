@@ -5,6 +5,8 @@ Carotene can be configured to republish every message received to a **RabbitMQ**
 
 This is useful if you want to connect other services to Carotene, for instance for analysis and monitorization of activity.
 
+.. image:: images/broker-diagram.png
+
 Redis
 ~~~~~
 To configure Redis as back broker, use the following configuration option:

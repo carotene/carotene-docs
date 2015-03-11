@@ -20,7 +20,8 @@ With the location of your corresponding ``cacert``, ``cert`` and ``key`` files.
 
 Once you have configured Carotene with SSL support, don't forget to access your carotene server with ``wss://`` instead of ``ws://`` in the client side code:
 
-.. code-block:: javasscript
+.. code-block:: javascript
+
     Carotene.init({
         caroteneUrl: 'wss://mycaroteneserver.com/websocket'
     });

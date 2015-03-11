@@ -7,6 +7,7 @@ Subscribing to a channel
 Your backend can receive messages published into channels by specifying a URL where the messages will be published with ``POST`` requests, and which channels do you want to subscribe to:
 
 .. code-block:: erlang
+
     [{carotene, [
         % ... Other configuration options
         {subscribe_url, "http://mybackend.com/carotene_consume"},

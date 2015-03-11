@@ -6,6 +6,7 @@ Presence is the ability of knowing who is subscribed to a channel in a given mom
 You can activate presence with the following option option in ``sys.config``:
 
 .. code-block:: erlang
+
     [{carotene, [
         % ... Other configuration options
         {presence, true}
@@ -23,7 +24,6 @@ To ask for a channel's presence, you can do the following call from the client J
 .. code-block:: javascript
 
     Carotene.presence(channel);
-    }
 
 Note that, for security reasons, the user asking for presence must be already subscribed to the channel.
 

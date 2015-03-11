@@ -31,23 +31,15 @@
 {%- macro sidebar() %}
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="docs-sidebar-wrapper">
-          {%- if sidebars != None %}
-            {#- new style sidebar: explicitly include/exclude templates #}
-            {%- for sidebartemplate in sidebars %}
-            {%- include sidebartemplate %}
-            {%- endfor %}
-          {%- else %}
-            {#- old style sidebars: using blocks -- should be deprecated #}
-            {%- block sidebartoc %}
-            {%- include "localtoc.html" %}
-            {%- endblock %}
-            {%- block sidebarrel %}
-            {%- include "relations.html" %}
-            {%- endblock %}
-            {%- if customsidebar %}
-            {%- include customsidebar %}
-            {%- endif %}
-          {%- endif %}
+        {% block menu %}
+          {% set toctree = toctree(maxdepth=2, collapse=False, includehidden=True) %}
+          {% if toctree %}
+              {{ toctree }}
+          {% else %}
+              <!-- Local TOC -->
+              <div class="local-toc">{{ toc }}</div>
+          {% endif %}
+        {% endblock %}
         </div>
       </div>
 {%- endmacro %}
@@ -58,7 +50,7 @@
 {%- block content %}
 
   <div class="row">
-  <div class="sidebar-docs col-xs-3">
+  <div class="sidebar-docs col-sm-3 hidden-xs">
   {{ relbar }}
   {%- block sidebar2 %}{{ sidebar() }}{% endblock %}
   </div>
@@ -80,6 +72,7 @@
 
       <div class="clearer"></div>
     </div>
+  </div>
   </div>
 {%- endblock %}
 </div>

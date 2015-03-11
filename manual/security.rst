@@ -3,7 +3,7 @@
 Security
 ========
 
-This chapter is divided in two sections:
+This chapter is divided in three sections:
 
 * **Authentication**: How identify users based on credentials.
 * **Authorization**: Different levels of security to restrict access to channels.
@@ -20,10 +20,10 @@ To authenticate, from client side Javascript you call the function ``authenticat
 
 .. code-block:: javascript
 
-    Carotene.authenticate{
+    Carotene.authenticate({
         userId: "myUserId",
         token: "somesecrettoken",
-        }
+        });
 
 
 Both ``userId`` and ``token`` are created by you. Provide the user identifier and generate a token in your backend that will identify that user. You can use the method you feel more comfortable with to generate the token, as your application will be the responsible for checking it later.
@@ -33,7 +33,17 @@ Once received an authentication request from the client, Carotene delegates the 
 ``user_id``: user identifier.
 ``token``: secret token.
 
+
 Your application can use these credentials to decide if the ``token`` is valid for the ``user_id``
+
+Add the authentication endpoint to the configuration:
+
+.. code-block:: erlang
+
+    [{carotene, [
+        % ... Other configuration options
+        {authenticate_url, "http://mybackend.com/authenticate_carotene/"}
+    }]}
 
 If the authentication fails, your application must respond with a JSON encoded string with the form:
 
@@ -137,8 +147,8 @@ For publishers use this configuration option:
 
 On the first publish or subscribe action, carotene will issue a POST request to the url you have configured in ``authorization_url`` with the following parameters:
 
-``user_id``: user identifier.
-``channel``: the channel the user is trying to access.
+* ``user_id``: user identifier.
+* ``channel``: the channel the user is trying to access.
 
 If your backend decides that the user can access the channel, it has to responde with a JSON encoded string with the following form:
 
