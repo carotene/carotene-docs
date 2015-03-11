@@ -34,11 +34,11 @@ Apart from some HTML boilerplate, the layout contains this piece of code:
             </div>
         </div>
 
-This defines two areas. The bigger one, in the left, will be used to display the comments of the administrator. The smaller one will host a general chat for supporters of both teams, where everyone can publish. In this step we will implement the general chat.
+This defines two areas. The bigger one, on the left, will be used to display the comments of the administrator. The smaller one will host a general chat for supporters of both teams, where everyone can publish. In this step we will implement the general chat.
 
 Now we are ready to bring dynamic elements to the application, communicating with Carotene from JavaScript in the client.
 
-In the res of the tuturial we will assume that you have a Carotene node running and listening to port ``8081``. If you have not installed Carotene yet, this is a good moment. Check out the :ref:`manual-installation-label` page of the manual.
+In the rest of the tuturial we will assume that you have a Carotene node running and listening to port ``8081``. If you have not installed Carotene yet, this is a good moment. Check out the :ref:`manual-installation-label` page of the manual.
 
 Now let's add two features:
 
@@ -102,7 +102,7 @@ There are three calls that are worth of discussion:
             caroteneUrl: 'ws://localhost:8081/websocket'
         });
 
-This call starts a connection to our Carotene server. After this moment, we have a bidiriectional communication channel with the server where we can send and receive messages.
+This call starts a connection to our Carotene server. After this moment, we have a bidirectional communication channel with the server where we can send and receive messages.
 
 .. code-block:: javascript
 
@@ -116,7 +116,7 @@ This call starts a connection to our Carotene server. After this moment, we have
             }
         });
 
-With this call, we declare that we want to do some action when a message is received in the channel ``chat``. We subscribe to the channel and bind a callback to this event. In our case, it will create a HTML element with the text of the message.
+With this call, we declare that we want to do some action when a message is received in the channel ``chat``. We subscribe to the channel and bind a callback to this event. In our case, it will create an HTML element with the text of the message.
 
  
 .. code-block:: javascript

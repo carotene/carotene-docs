@@ -5,11 +5,11 @@ Authenticating Users
 
 In the first step, we saw how to create a simple chat in Carotene: :ref:`scoreboard-simplechat-label`
 
-In this one, we will se how to identify users from our backend. Authenticating users is basic for many real-time applications. You may want to send messages from your backend to each users with notifications for instance if they have received a new message or if they have received a new payment. Also, is a prerrequisite for authorization, that we will cover in another step.
+In this one, we will see how to identify users from our backend. Authenticating users is basic for many real-time applications. You may want to send messages from your backend to each user with notifications if, for instance, they have received a new message, or if they have received a new payment. Also, authentication is a prerrequisite for authorization, that we will cover in another step.
 
-In many applications, we will have a backend that receives HTTP requests and sends appropiate responses written in our favorite technology. This backend can be written in any language and framework, and now we want to complement it to add real-time capabilities for certain features or sections of our app without having to rewrite everything or duplicate code.
+In many applications, we will have a backend that receives HTTP requests and sends appropiate responses written in our favorite technology. This backend can be written in any language and framework, and now we want to complement adding real-time capabilities for certain features or sections of our app, without having to rewrite everything or duplicate code.
 
-We have in our backend a database of users and mechanisms to register and log in users. But, once logged in, we want to authenticate them in the real-time services.
+We have in our backend a database of users and mechanisms to register and log users in. But, once logged in, we want to authenticate them in the real-time services.
 
 Let's reuse your existent user providers. You will have to provide an endpoint where Carotene will issue ``POST`` requests with authentication petitions, so your backend can decide who is authenticated and who is not.
 
@@ -22,7 +22,7 @@ Edit the Carotene configuration to add a URL of your backend where you will impl
         {authenticate_url, "http://mybackend.com/authenticate_carotene/"}
     }]}
 
-Your configuration file is located in ``_rel/carotene/releases/VERSION/sys.config``, relative to your carotene instalation. Substitute ``VERSION`` for your version of Carotene.
+Your configuration file is located in ``_rel/carotene/releases/VERSION/sys.config``, relative to your Carotene installation. Substitute ``VERSION`` for your version of Carotene.
 
 Once you have changed the configuration, restart Carotene to reload the configuration::
 
@@ -30,7 +30,7 @@ Once you have changed the configuration, restart Carotene to reload the configur
     $ _rel/carotene/bin/carotene start
 
 
-In the client code, add these lines of JavaScript, after initializing Carotene.
+In the client code, add these lines of JavaScript, after initializing Carotene:
 
 .. code-block:: javascript
 
@@ -39,9 +39,9 @@ In the client code, add these lines of JavaScript, after initializing Carotene.
         token: "somesecrettoken",
     });
 
-When you render the page in your backend, provide these two pieces of information so that they are available in the rendered HTML code and can be placed in this place. Every web technology has a different way of rendering pages, so just do it your way. The only important thing is that ``userId`` is something that identifies your user in your application and ``token`` is a secret string that can be used to check if the user is who he says.
+When you render the page in your backend, provide these two pieces of information, so that they are available in the rendered HTML code and can be placed in there. Every web technology has a different way of rendering pages, so just do it your way. The only important thing is that ``userId`` is something that identifies your user in your application and ``token`` is a secret string that can be used to check if the user is who he says to be.
 
-There are may ways to generate these tokens. It can be from an Oauth Token to something you generate for the user. You can use, for instance, HMAC. See a good explanation about this topic in `this post <https://blog.jcoglan.com/2012/06/09/why-you-should-never-use-hash-functions-for-message-authentication/>`_.
+There are many ways to generate these tokens. It can be from an Oauth Token to something you generate for the user. You can use, for instance, HMAC. See a good explanation about this topic in `this post <https://blog.jcoglan.com/2012/06/09/why-you-should-never-use-hash-functions-for-message-authentication/>`_.
 
 Now it is time to write the server-side code that will check authentication requests. It depends on languages and frameworks, but for instance in PHP/Symfony would be something like this:
 

@@ -5,9 +5,9 @@ Publishing and Subscribing from the backend
 
 In this step we will see how to publish messages and subscribe to channels from the backend.
 
-This has many use cases. You may want to notify a user she has received a message, or you may want to broadcast a message to all your visitors to inform them that a offer is about to expire.
+This has many use cases. You may want to notify a user that she has received a message, or you may want to broadcast a message to all your visitors to inform them that an offer is about to expire.
 
-Publishing to Carotene is easy, you just have to issue a POST request to the api. You can try to send a message to the scoreboard with CURL:
+Publishing to Carotene is easy, you just have to issue a POST request to the API. You can try to send a message to the scoreboard with CURL:
 
 .. code-block:: bash
 
@@ -15,7 +15,7 @@ Publishing to Carotene is easy, you just have to issue a POST request to the api
 
 That is it. A POST request with a parameter ``message``. The content of ``message`` should be encoded in JSON. If it is not, Carotene will do try to encode it. Note that although in these examples we are just sending strings around, you could publish more complex structures.
 
-To subscribe, we need to change the configuration. We have to tell Carotene a list of the channels we want to subscribe to and where to POST the messages that are received. Let's do it.
+In order to subscribe, we need to change the configuration. We have to tell Carotene a list of the channels we want to subscribe to, and where to POST the messages that are received. Let's do it.
 
 .. code-block:: erlang
 

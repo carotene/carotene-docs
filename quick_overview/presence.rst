@@ -5,9 +5,9 @@ Adding Presence
 
 In this step, we will add to our live scoreboard a counter of the users that are subscribed to the chat in a given moment.
 
-Many real-time applications need presence. You may even use presence in your backend to see the lists of users that are online in your application by setting up a common channel for authenticated users.
+Many real-time applications need presence. You may even use presence in your backend to see the list of users that are online in your application by setting up a common channel for authenticated users.
 
-Adding presence is easy. Just enable it in your Carotene configuration in ``_rel/carotene/releases/VERSION/sys.config``, relative to your carotene instalation. Substitute ``VERSION`` for your version of Carotene.
+Adding presence is easy. Just enable it in your Carotene configuration in ``_rel/carotene/releases/VERSION/sys.config``, relative to your Carotene installation. Substitute ``VERSION`` for your version of Carotene.
 
 .. code-block:: erlang
 
@@ -34,7 +34,7 @@ And now we can make this call in our JavaScript code:
         $('#connected').text(presence.subscribers.length);
     });
 
-And add a HTMl element to the bottom of the scoreboard where we will update the counter of users:
+Finally, add a HTMl element to the bottom of the scoreboard where we will update the counter of users:
 
 .. code-block:: html
 
