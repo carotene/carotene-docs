@@ -52,7 +52,7 @@ Messages received are JavaScript objects. If it is a message sent by another use
 
 * ``message``: the content of the message
 * ``user_id``: the user identifier of the publisher or ``anonymous`` if the user has not authenticated itself.
-* ``user_data``: the user data provided by the server in the :ref:`manual-security-authentication-label` section of the :ref:`manual-security-label` chapter.
+* ``user_data``: the user data provided by the server in the Authentication section of the :ref:`manual-security-label` chapter.
 
 If the message comes from your backend, it will not contain fields that identify the user, but instead it will have the field ``fromserver``, with value ``true``.
 
