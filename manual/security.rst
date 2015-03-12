@@ -5,8 +5,8 @@ Security
 
 This chapter is divided in three sections:
 
-* **Authentication**: How identify users based on credentials.
-* **Authorization**: Different levels of security to restrict access to channels.
+* **Authentication**: Identify users based on credentials.
+* **Authorization**: Different levels of security, to restrict access to channels.
 * **Restrict API access**: Rescrict the access to the API to a particular IP.
 
 
@@ -14,7 +14,7 @@ This chapter is divided in three sections:
 Authentication
 ~~~~~~~~~~~~~~
 
-Authenticating a user in Carotene serves two purposes. First, once authenticated the verified user_id of the user will be attached to every message that the user publishes, making it possible for other users and the backend to know who is the origin of the messages. Second, once authenticated this information will be used during authorization to subscribe or publish to private channels, as we will see in the authorization section.
+Authenticating a user in Carotene serves two purposes. First, once authenticated, the verified user_id of the user will be attached to every message that the user publishes, making it possible for other users and the backend to know who is the origin of the messages. Second, once authenticated, this information will be used during authorization to subscribe or publish to private channels, as we will see in the authorization section.
 
 To authenticate, from client side Javascript you call the function ``authenticate``:
 
@@ -30,11 +30,11 @@ Both ``userId`` and ``token`` are created by you. Provide the user identifier an
 
 Once received an authentication request from the client, Carotene delegates the authentication to your backend. You have to provide an endpoint where Carotene will issue POST requests with the following parameters:
 
-``user_id``: user identifier.
-``token``: secret token.
+* ``user_id``: user identifier.
+* ``token``: secret token.
 
 
-Your application can use these credentials to decide if the ``token`` is valid for the ``user_id``
+Your application can use these credentials to decide if the ``token`` is valid for the ``user_id``.
 
 Add the authentication endpoint to the configuration:
 
@@ -117,7 +117,7 @@ For publishers use this configuration option:
 ask
 ^^^
 
-With this level, a request will be issued to the backend to the server to determine if the user can subscribe or publish to a particular channel.
+With this level, a request will be issued to the backend to the server in order to determine if the user can subscribe or publish to a particular channel.
 
 This way, you can deal with different scenarios. From an application where every visitors will receive the new fresh content without needing to be authenticated, to complex requirements where only some users can publish or subscribe and only your backend has the logic to determine if the user has access she is asking for.
 
@@ -145,12 +145,12 @@ For publishers use this configuration option:
         ]},
     }]}
 
-On the first publish or subscribe action, carotene will issue a POST request to the url you have configured in ``authorization_url`` with the following parameters:
+On the first publish or subscribe action, Carotene will issue a POST request to the url you have configured in ``authorization_url`` with the following parameters:
 
 * ``user_id``: user identifier.
 * ``channel``: the channel the user is trying to access.
 
-If your backend decides that the user can access the channel, it has to responde with a JSON encoded string with the following form:
+If your backend decides that the user can access the channel, it has to respond with a JSON encoded string with the following form:
 
 .. code-block:: javascript
 

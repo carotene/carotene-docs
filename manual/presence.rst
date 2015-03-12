@@ -1,3 +1,5 @@
+.. _manual-presence-label:
+
 Presence
 ========
 

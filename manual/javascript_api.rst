@@ -5,7 +5,7 @@ JavaScript API
 
 
 
-You can find ``carotene.js`` from `its GitHub repository <https://github.com/carotene/carotene-js/>`_.
+You download ``carotene.js`` from `its GitHub repository <https://github.com/carotene/carotene-js/>`_.
 
 Add it to your HTML page:
 
@@ -52,7 +52,7 @@ Messages received are JavaScript objects. If it is a message sent by another use
 
 * ``message``: the content of the message
 * ``user_id``: the user identifier of the publisher or ``anonymous`` if the user has not authenticated itself.
-* ``user_data``: the user data provided by the server in the :ref:`manual-security-authentication` section of the :ref:`manual-security-label` chapter.
+* ``user_data``: the user data provided by the server in the :ref:`manual-security-authentication-label` section of the :ref:`manual-security-label` chapter.
 
 If the message comes from your backend, it will not contain fields that identify the user, but instead it will have the field ``fromserver``, with value ``true``.
 
@@ -76,7 +76,7 @@ Presence
 
 To ask for the identified users subscribed in a channel, you need to do two things:
 
-Provide a callback to be executed when you receive the presence information from server:
+Provide a callback to be executed when you receive the presence information from the server:
 
 .. code-block:: javascript
 
@@ -90,9 +90,9 @@ Ask for the presence information of the channel:
 
     Carotene.presence({channel: "mychannel"});
 
-Carotene will processes the request, and call your callback with the information.
+Carotene will process the request, and call your callback with the information.
 
-Your ``OnPresence`` callback will receive an object with two fields: ``channel`` (then name of the channel), and ``subscribers`` (the list of users subscribed to the channel).
+Your ``OnPresence`` callback will receive an object with two fields: ``channel`` (the name of the channel), and ``subscribers`` (the list of users subscribed to the channel).
 
 Also, be sure you have presence enabled in your configuration. Check the :ref:`manual-presence-label` chapter to learn how to do it.
 
@@ -102,9 +102,9 @@ Note that, for security reasons, the client asking for presence must be subscrib
 Informative messages
 ~~~~~~~~~~~~~~~~~~~~
 
-Carotene sends clients a number of informative messages informing about the result of certain actions, such as the result of the authentication, error messages ir the user is not authorized to publish or subscribe to a particular message or a success reply if the user after correct authentication.
+Carotene sends to clients a number of messages informing about the result of certain actions, such as the result of the authentication, error messages if the user is not authorized to publish or subscribe to a particular message, or a success reply after correct authentication.
 
-In most fo cases, you can ignore these messages but, specially during development they may be useful to understand what is happening. You can define a callback to log them to the console, for instance:
+In most cases, you can ignore these messages but, specially during development, you might find useful to understand what is happening. You can define a callback to log them to the console, for instance:
 
 .. code-block:: javascript
 
@@ -112,4 +112,4 @@ In most fo cases, you can ignore these messages but, specially during developmen
         console.log(infoData);
     });
 
-The parameter passed to your callback, in this case ``infoData`` is a string with an informative message.
+The parameter passed to your callback, in this case ``infoData``, is a string with an informative message.

@@ -3,7 +3,7 @@
 Configuring SSL
 ===============
 
-SSL is **highly recomended** for security reasons, but also to have a higher chance of successful websocket connection when the user is behind a restrictive proxy. To configure SSL you have to add the following configuration rules:
+SSL is **highly recomended** for security reasons, but also in order to have a higher chance of successful websocket connection when the user is behind a restrictive proxy. To configure SSL you have to add the following configuration rules:
 
 .. code-block:: erlang
 
@@ -18,7 +18,7 @@ SSL is **highly recomended** for security reasons, but also to have a higher cha
 
 With the location of your corresponding ``cacert``, ``cert`` and ``key`` files.
 
-Once you have configured Carotene with SSL support, don't forget to access your carotene server with ``wss://`` instead of ``ws://`` in the client side code:
+Once you have configured Carotene with SSL support, don't forget to access your Carotene server with ``wss://`` instead of ``ws://`` in the client side code:
 
 .. code-block:: javascript
 
@@ -26,5 +26,5 @@ Once you have configured Carotene with SSL support, don't forget to access your 
         caroteneUrl: 'wss://mycaroteneserver.com/websocket'
     });
 
-And also don't forget that the api will be now accessible via ``https://`` instead of ``http://``.
+And also don't forget that the API will now be accessible via ``https://`` instead of ``http://``.
 

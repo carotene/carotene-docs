@@ -31,14 +31,14 @@ Carotene provides a RESTful API to retrieve information about subscribed channel
 Publishing to a channel
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-If you perform a ``POST`` query to ``http(s)://mycaroteneserver/api/channels/mychannel/messages`` with the parameter ``message`` you will publish that message into the channel.
+If you perform a ``POST`` query to ``http(s)://mycaroteneserver/api/channels/mychannel/messages`` with the parameter ``message``, you will publish that message into the channel.
 
 Retrieving a list to subscribed channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Performing a ``GET`` request to ``http(s)://mycaroteneserver/api/channels`` you can retrieve a list of the channels the server is subscribed to.
+By performing a ``GET`` request to ``http(s)://mycaroteneserver/api/channels`` you can retrieve a list of the channels the server is subscribed to.
 
-The list will be equivalent to what what is specified in the configuration. So, if you have in configuration an option like:
+The list will be equivalent to what is specified in the configuration. So, if you have in your configuration an option like
 
 .. code-block:: erlang
 
@@ -47,7 +47,7 @@ The list will be equivalent to what what is specified in the configuration. So, 
         {subscribed_channels, ["general", "room1"]}
     }]}
 
-And if you access to ``http(s)://mycaroteneserver/api/channels`` you will retrieve a list of the channels that have been created and that are in the list.
+and if you access to ``http(s)://mycaroteneserver/api/channels``, you will retrieve a list of the channels that have been created and are in the list.
 
 
 Retrieving presence information for a channel
