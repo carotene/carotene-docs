@@ -6,7 +6,6 @@ This documentation is available online at http://carotene-project.com
 Contributing
 ------------
 
-This documentation is written in [Pollen](http://pollenpub.com/).
-You can render it running `raco pollen start`.
+This documentation is written in [Sphinx](http://sphinx-doc.org/contents.html).
 
 Contributors are welcome!
