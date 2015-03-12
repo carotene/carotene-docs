@@ -6,7 +6,7 @@ Installation
 Get dependencies
 ~~~~~~~~~~~~~~~~
 
-Carotene is an Erlang application. To install Carotene you need a recent version of **Erlang** installed. See instructions `here <http://erlangcentral.org/downloads/>`.
+Carotene is an Erlang application. To install Carotene you need a recent version of **Erlang** installed. See instructions `here <http://erlangcentral.org/downloads/>`_.
 
 To build Carotene you will also need **rebar**, a package manager (among other things) for Erlang:
 
@@ -16,32 +16,42 @@ To build Carotene you will also need **rebar**, a package manager (among other t
     $ cd rebar
     $ ./bootstrap
 
-This will generate a ``rebar`` command. Place it in a directory in your ``$PATH``, such as ``/usr/local/bin/``::
+This will generate a ``rebar`` command. Place it in a directory in your ``$PATH``, such as ``/usr/local/bin/``:
+
+.. code-block:: bash
 
     $ sudo mv rebar /usr/local/bin/
 
 Build Carotene
 ~~~~~~~~~~~~~~
 
-Then, get Carotene::
+Then, get Carotene:
+
+.. code-block:: bash
 
     $ git clone https://github.com/carotene/carotene.git
 
 Compiling
 ~~~~~~~~~
 
-Compile it by running:::
+Compile it by running:
+
+.. code-block:: bash
 
     $ cd carotene
-    $ make}
+    $ make
 
 After this step, if things go as expected, you should have a ``_rel`` directory, where a release of carotene has been built.
 
-Try to run it by typing:::
+Try to run it by typing:
+
+.. code-block:: bash
 
     $ _rel/carotene/bin/carotene console
 
-You should see something like:::
+You should see something like:
+
+.. code-block:: bash
 
     Starting Carotene node carotene@localhost
     HTTP server listening to port 8081
@@ -51,13 +61,17 @@ You should see something like:::
 
 This is an Erlang console. You can use it for several purposes, but for now, just exit by typing ``q().``
 
-After this check, you can just run Carotene in the background:::
+After this check, you can just run Carotene in the background:
+
+.. code-block:: bash
 
     $ _rel/carotene/bin/carotene start
 
 And that is it. You have a Carotene server running and accepting connections.
 
-If you ever want to stop carotene use:::
+If you ever want to stop carotene use:
+
+.. code-block:: bash
 
     $ _rel/carotene/bin/carotene stop
 
