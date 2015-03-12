@@ -61,7 +61,7 @@ Full configuration options
         % Nodes in cluster, including this one
         %%
     
-        %, {nodes_in_cluster, [carotene@localhost, carotene2@localhost]}
+        %, {nodes_in_cluster, ['carotene@localhost', 'carotene2@localhost']}
     
         %%
         % SSL configuration options. Certificates and key locations
