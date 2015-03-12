@@ -20,15 +20,15 @@ Erlang cookie
 
 Erlang nodes that want to connect with other nodes must share the same cookie. An Erlang cookie is an alphanumeric string. You can write whatever string you want.
 
-On startup, Erlang will create one for you. You can simply start your first node and then copy the cookie to the other machines in your cluster.
-
-On Unix systems, you can find your Erlang cookie in ``$HOME/.erlang.cookie``.
+The cookie is located in ``_rel/carotene/releases/VERSION/vm.args``. By default is ``carotene``. You should change it.
 
 Node configuration
 ^^^^^^^^^^^^^^^^^^
 
 Every carotene node must have a different node name. You can set the environment variable in the file ``_rel/carotene/releases/VERSION/vm.args`` of your Carotene installation (``VERSION`` is the version you are running). You can change the node name changing the option:
-``-sname carotene@localhost`` to a nodename in a hostname that the other nodes jnow.
+``-sname carotene@localhost`` to a nodename in a hostname that the other nodes know.
+
+If you prefer to use long names for the nodes, such as ``carotene@myfulldomain.com``, instead of ``-sname carotene@domain`` use ``-name carotene@domain.com`` (note the difference ``sname``/``name``).
 
 Note that for development you can have several nodes in the same machine named for instance ``carotene1@localhost``, ``betacarotene@localhost``...
 
@@ -38,6 +38,14 @@ To define the nodes your node will try to join on start up, use the following co
 
     [{carotene, [
         % ... Other configuration options
-        {nodes_in_cluster, [carotene@carotene1, carotene@carotene2]},
+        {nodes_in_cluster, ['carotene@carotene1', 'carotene@carotene2']},
         ]},
     }]}
+
+For debugging problems, start carotene with:
+
+.. code-block:: bash
+
+    $ _rel/carotene/bin/carotene console
+
+On start up, each node will display a message with the nodes that he connected to (including itself).
