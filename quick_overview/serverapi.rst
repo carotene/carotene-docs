@@ -27,12 +27,12 @@ In order to subscribe, we need to change the configuration. We have to tell Caro
         , {subscribed_channels, ["chat"]}
     ]}
 
-Once you have changed the configuration, restart Carotene to reload the configuration::
+Once you have changed the configuration, restart Carotene to reload it::
 
     $ _rel/carotene/bin/carotene stop
     $ _rel/carotene/bin/carotene start
 
-Once subscribed, all messages published into the ``chat`` channel will be POSTed into the url provided. We could use this feature in this application to detect people that get very annoying in the comments of sport events. Or to detect questions directed to the admin who is commenting the game. Or to make a raffle. But since this is backend-specific, we will let you come with the application for this. Let's instead make something simple, like logging all the messages that arrive to the ``chat`` channel:
+Once subscribed, all messages published into the ``chat`` channel will be POSTed into the url provided. We could use this feature in this application to detect people that get very annoying in the comments of sport events. Or to detect questions directed to the admin who is commenting the game. Or to make a raffle. But since this is backend-specific, we will let you come up with the application for this. Let's instead make something simple, like logging all the messages that arrive to the ``chat`` channel:
 
 .. code-block:: php
 
