@@ -7,42 +7,54 @@
   {%- set titlesuffix = "" %}
 {%- endif %}
 
+{%- macro relbar() %}
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>{{ _('Navigation') }}</h3>
+      <ul>
+        {%- for rellink in rellinks %}
+        <li class="right" {% if loop.first %}style="margin-right: 10px"{% endif %}>
+          <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}"
+             {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
+          {%- if not loop.first %}{{ reldelim2 }}{% endif %}</li>
+        {%- endfor %}
+        {%- block rootrellink %}
+        <li class="nav-item nav-item-0"><a href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a>{{ reldelim1 }}</li>
+        {%- endblock %}
+        {%- for parent in parents %}
+          <li class="nav-item nav-item-{{ loop.index }}"><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a>{{ reldelim1 }}</li>
+        {%- endfor %}
+        {%- block relbaritems %} {% endblock %}
+      </ul>
+    </div>
+{%- endmacro %}
+
 {%- macro sidebar() %}
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-          {%- block sidebarlogo %}
-          {%- if logo %}
-            <p class="logo"><a href="{{ pathto(master_doc) }}">
-              <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
-            </a></p>
-          {%- endif %}
-          {%- endblock %}
-          {%- if sidebars != None %}
-            {#- new style sidebar: explicitly include/exclude templates #}
-            {%- for sidebartemplate in sidebars %}
-            {%- include sidebartemplate %}
-            {%- endfor %}
-          {%- else %}
-            {#- old style sidebars: using blocks -- should be deprecated #}
-            {%- block sidebartoc %}
-            {%- include "localtoc.html" %}
-            {%- endblock %}
-            {%- block sidebarrel %}
-            {%- include "relations.html" %}
-            {%- endblock %}
-            {%- if customsidebar %}
-            {%- include customsidebar %}
-            {%- endif %}
-          {%- endif %}
+        <div class="docs-sidebar-wrapper">
+        {% block menu %}
+          {% set toctree = toctree(maxdepth=2, collapse=False, includehidden=True) %}
+          {% if toctree %}
+              {{ toctree }}
+          {% else %}
+              <!-- Local TOC -->
+              <div class="local-toc">{{ toc }}</div>
+          {% endif %}
+        {% endblock %}
         </div>
       </div>
 {%- endmacro %}
 
 {%- block header %}{% endblock %}
 
+<div class="carothene-docs">
 {%- block content %}
-  {%- block sidebar1 %} {# possible location for sidebar #} {% endblock %}
 
+  <div class="row">
+  <div class="sidebar-docs col-sm-3 hidden-xs">
+  {{ relbar }}
+  {%- block sidebar2 %}{{ sidebar() }}{% endblock %}
+  </div>
+  <div class="main-content col-xs-9">
     <div class="document">
   {%- block document %}
       <div class="documentwrapper">
@@ -58,8 +70,9 @@
       </div>
   {%- endblock %}
 
-  {%- block sidebar2 %}{{ sidebar() }}{% endblock %}
       <div class="clearer"></div>
     </div>
+  </div>
+  </div>
 {%- endblock %}
-
+</div>

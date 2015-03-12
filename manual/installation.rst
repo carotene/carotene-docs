@@ -1,3 +1,5 @@
+.. _manual-installation-label:
+
 Installation
 ============
 
@@ -76,4 +78,4 @@ If you ever want to stop carotene use:
 Configuration
 ~~~~~~~~~~~~~
 
-On ``_rel/carotene/releases/VERSION/sys.config`` you will find the config file. By default, it is very minimal, specifying only the port where carotene runs. You will see more configuration options in other chapters of this guide, for presence activation, authorization, configuration, SSL, running Carotene in a cluster and more, but at this point you have a working Carotene server managing connections and PubSub channels. You can also jump to an explanation of all the configuration options n the ":ref:`manual-htlconfiguration_options`".
+On ``_rel/carotene/releases/VERSION/sys.config`` you will find the config file. By default, it is very minimal, specifying only the port where carotene runs. You will see more configuration options in other chapters of this guide, for presence activation, authorization, configuration, SSL, running Carotene in a cluster and more, but at this point you have a working Carotene server managing connections and PubSub channels. You can also jump to an explanation of all the configuration options in the :ref:`manual-configuration-options-label` chapter.
