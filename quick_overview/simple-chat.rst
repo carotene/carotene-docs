@@ -9,7 +9,7 @@ First things first, let's make a HTML layout where we can see our progress. The 
 
 .. image:: images/step1.png
 
-You can download this HTML layout `here <http://carotene-project.com/livescoreboard/layout.html>`_ , the css `here <http://carotene-project.com/livescoreboard/scoreboard.css>`_ and carotene.js, the JavaScript Carotene library `here <https://github.com/carotene/carotene.js>`_.
+You can download this HTML layout `here <http://carotene-project.com/livescoreboard/layout.html>`_ , the css `here <http://carotene-project.com/livescoreboard/scoreboard.css>`_ and carotene.js, the JavaScript Carotene library `here <https://github.com/carotene/carotene-js>`_.
 
 Apart from some HTML boilerplate, the layout contains this piece of code:
 
