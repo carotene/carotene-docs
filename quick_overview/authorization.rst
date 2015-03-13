@@ -5,7 +5,7 @@ Authorization
 
 In this step we will enable the scoreboard, where an admin of the site will update the score and comment the plays, so that all users receive the updates in real-time. To do so, we need a way to **authorize** only our admins.
 
-In Carotene there are three levels of authorization. In the default mode, **anonymous**, everyone can access the channel. In **authenticated** mode only authenticated users can access the channel. In the third level, **ask**, it will ask your backend if a user is authorized to access a channel. The logic of your application will decide it.
+In Carotene there are three levels of authorization. In the default mode, **anonymous**, everyone can access the channel. In **authenticated** mode only authenticated users can access the channel. In the third level, **ask**, Carotene will ask your backend if a user is authorized to access a channel. The logic of your application will decide it.
 
 For this example, we will leave the subscription to the channel in *anonymous* level (we want to be possible for everyone to read messages), but we will change the level required for publication to *ask*.
 
@@ -22,7 +22,7 @@ To do so, we need to change the configuration of Carotene:
 
 The url is an endpoint that Carotene will use to ask your backend if the user is authorized or not, in a similar way as we did with authentication.
 
-Once you have changed the configuration, restart Carotene to reload the configuration::
+Once you have changed the configuration, restart Carotene to reload it::
 
     $ _rel/carotene/bin/carotene stop
     $ _rel/carotene/bin/carotene start

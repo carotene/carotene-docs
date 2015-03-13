@@ -17,7 +17,7 @@ Adding presence is easy. Just enable it in your Carotene configuration in ``_rel
     }]}
 
 
-Once you have changed the configuration, restart Carotene to reload the configuration::
+Once you have changed the configuration, restart Carotene to reload it::
 
     $ _rel/carotene/bin/carotene stop
     $ _rel/carotene/bin/carotene start
@@ -34,7 +34,7 @@ And now we can make this call in our JavaScript code:
         $('#connected').text(presence.subscribers.length);
     });
 
-Finally, add a HTMl element to the bottom of the scoreboard where we will update the counter of users:
+Finally, add an HTMl element to the bottom of the scoreboard where we will update the counter of users:
 
 .. code-block:: html
 
@@ -46,6 +46,6 @@ With these changes, we will get a live counter of the number of users subscribed
 
 Note that a user can have several connections open to the same page, so we will only count the number of unique authenticated users connected.
 
-This step was quick. In the next one we will see how can we restrict access to a set of users to a channel.
+This step was quick. In the next one we will see how we can restrict access to a channel to a set of users.
 
 Check out the next step of the tutorial: :ref:`scoreboard-authorization-label`
