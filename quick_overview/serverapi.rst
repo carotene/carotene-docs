@@ -9,7 +9,7 @@ This has many use cases. You may want to notify a user that she has received a m
 
 But enough talking, let's see how to publish and subscribe from the backend.
 
-Publishing to Carotene is easy, you just have to issue a POST request to the API. You can try to send a message to the scoreboard with CURL:
+Publishing to Carotene is easy, you just have to issue a POST request to the API. You can try to send a message to the scoreboard with CURL from your terminal:
 
 .. code-block:: bash
 
@@ -17,7 +17,13 @@ Publishing to Carotene is easy, you just have to issue a POST request to the API
 
 That is it. A POST request with a parameter ``message``. The content of ``message`` should be encoded in JSON. If it is not, Carotene will do try to encode it. Note that although in these examples we are just sending strings around, you could publish more complex structures.
 
-In order to subscribe, we need to change the configuration. We have to tell Carotene a list of the channels we want to subscribe to, and where to POST the messages that are received. Let's do it.
+In a real application, your backend will be doing these requests, instead of you doing them manually. Imagine that your admin has a separate web view where she enters the messages. You may want to do things with them, like store them in the database, and then publish them to Carotene. Or you can have messages that are scheduled to be sent at some times. This feature allows you to do so.
+
+As you can see, we don't need to authenticate ourselves when talking to the API REST. Messages that arrive to it will be assumed to come from the backend. It is a very good idea to **restrict the access to the API** to an IP. Learn how to do it in the manual chapter :ref:`manual-restrict-api-access-label`.
+
+Check out the next step of the tutorial: :ref:`scoreboard-authorization-label`
+
+Now, in order to subscribe to channels, we need to change the configuration. We have to tell Carotene a list of the channels we want to subscribe to, and where to POST the messages that are received. Let's do it.
 
 .. code-block:: erlang
 
@@ -52,3 +58,5 @@ Once subscribed, all messages published into the ``chat`` channel will be POSTed
 As we can see, Carotene sends a POST request with two parameters: ``channel`` (the channel where this message was published) and ``message`` (the actual content of the message, encoded en JSON).
 
 With this, we have covered how to publish and subscribe from our backend.
+
+We are always looking for ways to improve the documentation. If you have problems or suggestions, open a `pull request <https://github.com/carotene/carotene-docs>`_ or send us an email at nacho@limenius.com.

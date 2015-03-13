@@ -50,7 +50,7 @@ Now it is time to write the server-side code that will check authentication requ
 .. code-block:: php
 
     /**
-     * @Route("/carotene-auth")
+     * @Route("/carotene-authenticate")
      */
     public function authenticateAction(Request $request)
     {
@@ -104,6 +104,24 @@ This is what we have built so far:
 
 .. image:: images/after-step2.png
 
+Remember that, if things go wrong, you can open a Websocket inspector in your browser. In Google Chrome, for instance, you have one in Developer Tools:
+
+.. image:: images/debug-ws-chrome.png
+
+In this case, we see that Carotene is sending us a frame of type ``info`` that tells us that the server is not returning a valid response. In this case try making POST requests to your authentication URL manually (or with CURL) with ``user_id`` and ``token`` as parameters to check if the response is valid.
+
+You can also log these messages during development using this JavaScript line:
+
+.. code-block:: javascript
+
+    Carotene.setOnInfo(function(info) {
+        console.log('DEBUG: '+ info.payload);
+    });
+
+Note that if you open this example in two windows, the avatars for each user may change between windows. This is because we are using ``http://lorempixel.com/40/40/sports`` that serves random images that change every time they are served. In a real application, where you have an avatar for every user, this won't happen, but it is quite out of the scope of this tutorial to go into the topic of avatar management.
+
 In the next step we will add presence information to know the list of users that are subscribed in a particular moment.
 
 Check out the next step of the tutorial: :ref:`scoreboard-presence-label`
+
+We are always looking for ways to improve the documentation. If you have problems or suggestions, open a `pull request <https://github.com/carotene/carotene-docs>`_ or send us an email at nacho@limenius.com.

@@ -135,3 +135,5 @@ We will call the ``publishChatMsg`` function to publish a message to the ``chat`
 With this, we have a simple chat room. In the next chapter we will see how to authenticate users against our backend, where we have information about the users of our site.
 
 Check out the next step of the tutorial: :ref:`scoreboard-authentication-label`
+
+We are always looking for ways to improve the documentation. If you have problems or suggestions, open a `pull request <https://github.com/carotene/carotene-docs>`_ or send us an email at nacho@limenius.com.

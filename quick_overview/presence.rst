@@ -46,6 +46,12 @@ With these changes, we will get a live counter of the number of users subscribed
 
 Note that a user can have several connections open to the same page, so we will only count the number of unique authenticated users connected.
 
+This is what we have built so far:
+
+.. image:: images/after-step3.png
+
 This step was quick. In the next one we will see how can we restrict access to a set of users to a channel.
 
 Check out the next step of the tutorial: :ref:`scoreboard-authorization-label`
+
+We are always looking for ways to improve the documentation. If you have problems or suggestions, open a `pull request <https://github.com/carotene/carotene-docs>`_ or send us an email at nacho@limenius.com.

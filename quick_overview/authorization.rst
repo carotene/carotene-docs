@@ -48,7 +48,9 @@ The implementation of your authorization code will depend on your needs, and als
             $authorized = true;
         } else {
             // Your authentication code
-            $authorized = isAuthorized($userId, $channel);
+            // $authorized = isAuthorized($userId, $channel);
+            // (You can just set $authenticated = false;
+            // or $authenticated = true; to continue the tutorial)
         }
 
         $result = json_encode(array(
@@ -97,4 +99,4 @@ Now you are an expert of authorization in Carotene. In the next step we will add
 
 Check out the next step of the tutorial: :ref:`scoreboard-serverapi-label`
 
-
+We are always looking for ways to improve the documentation. If you have problems or suggestions, open a `pull request <https://github.com/carotene/carotene-docs>`_ or send us an email at nacho@limenius.com.

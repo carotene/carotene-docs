@@ -164,6 +164,8 @@ On the contrary, if the user has no access to the channel, your application must
 
     {"authorized": false}
 
+.. _manual-restrict-api-access-label:
+
 Restrict API access
 ~~~~~~~~~~~~~~~~~~~
 
