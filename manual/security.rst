@@ -129,7 +129,7 @@ For subscribers use this configuration option:
         % ... Other configuration options
         {subscribe_authorization, [
             {level, ask},
-            {authorization_url, "http://mybackend.com/authorize_subscribe_carotene/"}
+            {authorization_url, "http://mybackend.com/carotene-authorize-subscribe"}
         ]},
     }]}
 
@@ -141,9 +141,11 @@ For publishers use this configuration option:
         % ... Other configuration options
         {publish_authorization, [
             {level, ask},
-            {authorization_url, "http://mybackend.com/authorize_publish_carotene/"}
+            {authorization_url, "http://mybackend.com/carotene-authorize-publish"}
         ]},
     }]}
+
+Of course you should set ``authorization_url`` to the URL that will provide this service.
 
 On the first publish or subscribe action, Carotene will issue a POST request to the url you have configured in ``authorization_url`` with the following parameters:
 

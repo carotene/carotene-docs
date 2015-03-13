@@ -10,7 +10,7 @@ Your backend can receive messages published into channels by specifying a URL wh
 
     [{carotene, [
         % ... Other configuration options
-        {subscribe_url, "http://mybackend.com/carotene_consume"},
+        {subscribe_url, "http://mybackend.com/carotene-consume"},
         {subscribed_channels, ["general", "room1"]}
     }]}
 

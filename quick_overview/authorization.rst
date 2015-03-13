@@ -17,7 +17,7 @@ To do so, we need to change the configuration of Carotene:
         % ... Other configuration options
     , {publish_authorization, [
         {level, ask},
-        {authorization_url, "http://mybackend.com/authorize-publish-carotene/"}
+        {authorization_url, "http://mybackend.com/carotene-authorize-publish"}
     ]}
 
 The url is an endpoint that Carotene will use to ask your backend if the user is authorized or not, in a similar way as we did with authentication.

@@ -19,10 +19,12 @@ Edit the Carotene configuration to add a URL of your backend where you will impl
 
     [{carotene, [
         % ... Other configuration options
-        {authenticate_url, "http://mybackend.com/authenticate_carotene/"}
+        {authenticate_url, "http://mybackend.com/carotene-authenticate"}
     }]}
 
 Your configuration file is located in ``_rel/carotene/releases/VERSION/sys.config``, relative to your Carotene installation. Substitute ``VERSION`` for your version of Carotene.
+
+In the configuration file that is generated for you during installation you will have this option commented with a ``%`` sign. You can just remove the ``%`` to uncomment the option, enabling it.
 
 Once you have changed the configuration, restart Carotene to reload the configuration::
 

@@ -4,8 +4,7 @@ Full configuration options
 ==========================
 
 
-.. code-block:: erlang
-
+    .. code-block:: erlang
     [{carotene, [
         %%
         % Port Carotene listens to
@@ -29,14 +28,14 @@ Full configuration options
         % will be POSTed
         %%
     
-        %, {subscribe_url, "http://myserver.com/carotene-consume"}
+        %, {subscribe_url, "http://mybackend.com/carotene-consume"}
         %, {subscribed_channels, ["chat"]}
     
         %%
         % Authentication URL
         %%
     
-        %, {authenticate_url, "http://myserver.com/carotene-auth"}
+        %, {authenticate_url, "http://mybackend.com/carotene-authenticate"}
     
     
         %%
@@ -45,7 +44,7 @@ Full configuration options
     
         %, {publish_authorization, [
         %    {level, ask},
-        %    {authorization_url, "http://myserver.com/authorize-publish-carotene"}
+        %    {authorization_url, "http://mybackend.com/carotene-authorize-publish"}
         %]}
         %, {subscribe_authorization, [
         %    {level, anonymous}
