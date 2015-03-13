@@ -38,12 +38,12 @@ This defines two areas. The bigger one, on the left, will be used to display the
 
 Now we are ready to bring dynamic elements to the application, communicating with Carotene from JavaScript in the client.
 
-In the rest of the tuturial we will assume that you have a Carotene node running and listening to port ``8081``. If you have not installed Carotene yet, this is a good moment. Check out the :ref:`manual-installation-label` page of the manual.
+In the rest of the tutorial we will assume that you have a Carotene node running and listening to port ``8081``. If you have not installed Carotene yet, this is a good moment. Check out the :ref:`manual-installation-label` page of the manual.
 
 Now let's add two features:
 
 * When a user clicks the "Send" button, we will publish the entered text to the channel ``chat``.
-* We will subscribe to the ``chat`` channel and set up a callback that will be called when a message is received, so we can update the list of messages received.
+* We will subscribe to the ``chat`` channel and set up a callback that will be called when a message is received, so we can update the list of received messages.
 
 Place this code at the end of your HTML page (or in a separate file, if you prefer).
 

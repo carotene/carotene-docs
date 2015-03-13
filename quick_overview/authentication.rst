@@ -5,7 +5,7 @@ Authenticating Users
 
 In the first step, we saw how to create a simple chat in Carotene: :ref:`scoreboard-simplechat-label`
 
-In this one, we will see how to identify users from our backend. Authenticating users is basic for many real-time applications. You may want to send messages from your backend to each user with notifications if, for instance, they have received a new message, or if they have received a new payment. Also, authentication is a prerrequisite for authorization, that we will cover in another step.
+In this one, we will see how to identify users from our backend. Authenticating users is basic for many real-time applications. You may want to send messages from your backend to each user with notifications if --for instance-- they have received a new message, or if they have received a new payment. Also, authentication is a prerequisite for authorization, that we will cover in another step.
 
 In many applications, we will have a backend that receives HTTP requests and sends appropiate responses written in our favorite technology. This backend can be written in any language and framework, and now we want to complement adding real-time capabilities for certain features or sections of our app, without having to rewrite everything or duplicate code.
 
