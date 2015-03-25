@@ -23,7 +23,7 @@ Once you have configured Carotene with SSL support, don't forget to access your 
 .. code-block:: javascript
 
     Carotene.init({
-        caroteneUrl: 'wss://mycaroteneserver.com/websocket'
+        caroteneUrl: 'wss://mycaroteneserver.com/stream'
     });
 
 And also don't forget that the API will now be accessible via ``https://`` instead of ``http://``.

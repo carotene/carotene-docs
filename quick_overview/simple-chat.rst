@@ -54,7 +54,7 @@ Place this code at the end of your HTML page (or in a separate file, if you pref
 
         // Initialize connection with Carotene
         Carotene.init({
-            caroteneUrl: 'ws://localhost:8081/websocket'
+            caroteneUrl: 'ws://localhost:8081/stream'
         });
 
         // Subscribe to a channel.
@@ -99,7 +99,7 @@ There are three calls that are worth of discussion:
 
         // Initialize connection with Carotene
         Carotene.init({
-            caroteneUrl: 'ws://localhost:8081/websocket'
+            caroteneUrl: 'ws://localhost:8081/stream'
         });
 
 This call starts a Websockets connection to our Carotene server. After this moment, we have a bidirectional communication channel with the server where we can send and receive messages.

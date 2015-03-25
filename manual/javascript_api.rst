@@ -20,7 +20,7 @@ To initialize Carotene, use this code:
 .. code-block:: javascript
 
     Carotene.init({
-        caroteneUrl: 'ws://my-carotene-server.com/websocket'
+        caroteneUrl: 'ws://my-carotene-server.com/stream'
     });
 
 Change ``ws://`` per ``wss://`` if you are using SSL. See the :ref:`manual-ssl-label` chapter for more information about how to configure SSL.
