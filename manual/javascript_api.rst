@@ -5,13 +5,15 @@ JavaScript API
 
 
 
-You download ``carotene.js`` from `its GitHub repository <https://github.com/carotene/carotene-js/>`_.
+You can download ``carotene.js`` from `its GitHub repository <https://github.com/carotene/carotene-js/>`_.
 
 Add it to your HTML page:
 
 .. code-block:: html
 
     <script type="text/javascript" src="js/carotene.js"></script>
+
+Carotene depends on jQuery, so please add `jQuery <http://jquery.com/>`_ if you aren't already using it in your project.
 
 To initialize Carotene, use this code:
 
@@ -23,6 +25,7 @@ To initialize Carotene, use this code:
 
 Change ``ws://`` per ``wss://`` if you are using SSL. See the :ref:`manual-ssl-label` chapter for more information about how to configure SSL.
 
+When Websockets are not available, Carotene will rely on **long polling** instead. If you want to avoid using websockets (not recommended unless you have a good reason), use ``http://`` or ``https://`` instead of ``ws://`` and ``wss://``.
 
 Publish
 ~~~~~~~

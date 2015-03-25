@@ -9,7 +9,7 @@ First things first, let's make a HTML layout where we can see our progress. The 
 
 .. image:: images/step1.png
 
-You can download this HTML layout `here <http://carotene-project.com/livescoreboard/layout.html>`_ , the css `here <http://carotene-project.com/livescoreboard/scoreboard.css>`_ and carotene.js, the JavaScript Carotene library `here <https://github.com/carotene/carotene-js>`_.
+You can download this HTML layout `here <http://carotene-project.com/livescoreboard/layout.html>`_ , the css `here <http://carotene-project.com/livescoreboard/scoreboard.css>`_ and carotene.js, the JavaScript Carotene library `here <https://github.com/carotene/carotene-js/dist>`_.
 
 Apart from some HTML boilerplate, the layout contains this piece of code:
 
@@ -102,7 +102,9 @@ There are three calls that are worth of discussion:
             caroteneUrl: 'ws://localhost:8081/websocket'
         });
 
-This call starts a connection to our Carotene server. After this moment, we have a bidirectional communication channel with the server where we can send and receive messages.
+This call starts a Websockets connection to our Carotene server. After this moment, we have a bidirectional communication channel with the server where we can send and receive messages.
+
+If, for some reason, the user environment does not support Websockets, Carotene will fall back to long-polling instead. You don't have to worry about this, Carotene will manage it transparently.
 
 .. code-block:: javascript
 
