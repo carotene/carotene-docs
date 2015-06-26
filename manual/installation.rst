@@ -8,7 +8,7 @@ Debian / Ubuntu
 
 To install Carotene on Debian / Ubuntu, download our ``.deb`` package and install it:
 
-`carotene_0.2.2 <http://carotene.project.com/carotene_0.2.2-1_i386.deb/>`_
+`carotene_0.2.2-1_i386.deb <http://carotene.project.com/releases/carotene_0.2.2-1_i386.deb>`_
 
 .. code-block:: bash
 
